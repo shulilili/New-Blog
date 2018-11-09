@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
+  <url>
+    <loc>https://beta.rstudioconnect.com/content/3776/about.html</loc>
+    <lastmod>2018-11-08T20:09:45-08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://beta.rstudioconnect.com/content/3776/contributors.html</loc>
+    <lastmod>2018-11-08T20:30:06-08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://beta.rstudioconnect.com/content/3776/</loc>
+    <lastmod>2018-11-08T20:09:45-08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://beta.rstudioconnect.com/content/3776/posts/welcome/</loc>
+    <lastmod>2018-11-08T20:47:56-08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://beta.rstudioconnect.com/content/3776/posts/2018-11-08-missing-value/</loc>
+    <lastmod>2018-11-08T20:47:07-08:00</lastmod>
+  </url>
+</urlset>

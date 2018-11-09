@@ -1,0 +1,32 @@
+[
+  {
+    "path": "posts/welcome/",
+    "title": "Welcome to My Blog",
+    "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
+    "author": [
+      {
+        "name": "Nora Jones",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2018-11-08",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2018-11-08T20:47:56-08:00"
+  },
+  {
+    "path": "posts/2018-11-08-missing-value/",
+    "title": "How to deal with Missing Value",
+    "description": "A new article created using the Radix format.",
+    "author": [
+      {
+        "name": "Shuli Hu",
+        "url": {}
+      }
+    ],
+    "date": "2018-11-05",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2018-11-08T20:47:07-08:00"
+  }
+]
