@@ -1,0 +1,25 @@
+name: "New-Blog"
+title: "My Blog"
+description: |
+  My Blog
+output_dir: "_site"
+base_url: https://beta.rstudioconnect.com/content/3776/
+navbar:
+  logo: images/rstudio.png
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Contributors"
+      href: contributors.html
+    - icon: fa fa-rss
+      href: index.xml
+output: radix::radix_article
+collections:
+  posts:
+    disqus: 
+      shortname: reproducible-finance-with-r
+      hidden: false
+    share: [twitter, linkedin,facebook]
+    subscribe: _subscribe.html

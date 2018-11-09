@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>My Blog</title>
+    <link>https://beta.rstudioconnect.com/content/3776/</link>
+    <atom:link href="https://beta.rstudioconnect.com/content/3776/index.xml" rel="self" type="application/rss+xml"/>
+    <description>My Blog
+</description>
+    <generator>Radix</generator>
+    <lastBuildDate>Mon, 05 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>How to deal with Missing Value</title>
+      <dc:creator>Shuli Hu</dc:creator>
+      <link>https://beta.rstudioconnect.com/content/3776/posts/2018-11-08-missing-value</link>
+      <description>A new article created using the Radix format.</description>
+      <guid>https://beta.rstudioconnect.com/content/3776/posts/2018-11-08-missing-value</guid>
+      <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
