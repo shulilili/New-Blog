@@ -1,29 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
-    <title>My Blog</title>
-    <link>https://beta.rstudioconnect.com/content/3776/</link>
-    <atom:link href="https://beta.rstudioconnect.com/content/3776/index.xml" rel="self" type="application/rss+xml"/>
+    <title>Metabox-Blog</title>
+    <link>https://hushuli.github.io/Metabox-Blog.github.io/</link>
+    <atom:link href="https://hushuli.github.io/Metabox-Blog.github.io/index.xml" rel="self" type="application/rss+xml"/>
     <description>My Blog
 </description>
     <generator>Radix</generator>
-    <lastBuildDate>Thu, 08 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Just use Benjamini-Hochberg!</title>
+      <dc:creator>Sili Fan</dc:creator>
+      <link>https://hushuli.github.io/Metabox-Blog.github.io/posts/2018-12-08-why-we-should-almost-always-use-benjaminihochberg-to-control-fdr</link>
+      <description>Tukey's test v.s Benjamini-Hochberg. The latter is better.</description>
+      <guid>https://hushuli.github.io/Metabox-Blog.github.io/posts/2018-12-08-why-we-should-almost-always-use-benjaminihochberg-to-control-fdr</guid>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Welcome to My Blog</title>
       <dc:creator>Nora Jones</dc:creator>
-      <link>https://beta.rstudioconnect.com/content/3776/posts/welcome</link>
+      <link>https://hushuli.github.io/Metabox-Blog.github.io/posts/welcome</link>
       <description>Welcome to our new blog, My Blog. We hope you enjoy 
 reading what we have to say!</description>
-      <guid>https://beta.rstudioconnect.com/content/3776/posts/welcome</guid>
+      <guid>https://hushuli.github.io/Metabox-Blog.github.io/posts/welcome</guid>
       <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>How to deal with Missing Value</title>
       <dc:creator>Shuli Hu</dc:creator>
-      <link>https://beta.rstudioconnect.com/content/3776/posts/2018-11-08-missing-value</link>
+      <link>https://hushuli.github.io/Metabox-Blog.github.io/posts/2018-11-08-missing-value</link>
       <description>A new article created using the Radix format.</description>
-      <guid>https://beta.rstudioconnect.com/content/3776/posts/2018-11-08-missing-value</guid>
+      <guid>https://hushuli.github.io/Metabox-Blog.github.io/posts/2018-11-08-missing-value</guid>
       <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
+      <media:content url="https://hushuli.github.io/Metabox-Blog.github.io/posts/2018-11-08-missing-value/fig1.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Why Tukey's test but not t-test after ANOVA?</title>
+      <dc:creator>Sili Fan</dc:creator>
+      <link>https://hushuli.github.io/Metabox-Blog.github.io/posts/2018-12-06-why-tukeys-test-but-not-t-test-after-anova</link>
+      <description>Student t-test blows the type I error rate. Tukey's test controls the type I error rate.</description>
+      <guid>https://hushuli.github.io/Metabox-Blog.github.io/posts/2018-12-06-why-tukeys-test-but-not-t-test-after-anova</guid>
+      <pubDate>Tue, 23 Oct 2018 00:00:00 +0000</pubDate>
+      <media:content url="https://hushuli.github.io/Metabox-Blog.github.io/posts/2018-12-06-why-tukeys-test-but-not-t-test-after-anova/why-tukeys-test-but-not-t-test-after-anova_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
   </channel>
 </rss>

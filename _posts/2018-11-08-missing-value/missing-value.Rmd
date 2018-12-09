@@ -9,6 +9,9 @@ date: 11-05-2018
 output:
   radix::radix_article:
     self_contained: false
+categories:
+  - missing value
+  - Nov
 ---
 
 How to deal with missing value is always the first problem we need to consider when we have a set of data with missing value. Generally, there have 3 type of missing value: Missing Complete at Random (MCAR), Missing at Random (MAR) and Missing Not at Random (MNAR). The different situation has different way to handling. In this , they compare five different imputation methods (i.e., RF, kNN, SVD, Mean, Median) for MCAR/MAR and six imputation methods (i.e., QRILC, Half-minimum, Zero, RF, kNN, SVD) for MNAR. (Since MCAR and MAR are similar, they consider them as same category.) And results showed that RF imputation performed the best for MCAR/MAR and QRILC was the favored one for MNAR. So, this article will discuss 3 types of missing value and evaluate different imputation methods. 
@@ -29,9 +32,9 @@ Since those two types of missing value are very similar and hard to distinguish 
 
 
 ```{r, layout="l-body-outset", preview=TRUE, fig.cap="Figure from https://www.sciencedirect.com/science/article/pii/S0169534708002772#fig1", out.extra="class=external"}
-knitr::include_graphics("fig1.PNG")
+knitr::include_graphics("fig1.jpg")
 ```
-
+*Figure 1. Illustrations of the classification for the mechanism of missing data. Blue points are observations whereas red points are missing observations in the y-variable; statistics for complete data (blue and red combined) are slope (b) = 1, standard error (se) = 0.05 and R2 = 0.5. Assuming observations in the x-variable are complete, (a) represents missing at random (MAR), (b) represents missing not at random (MNAR) and (c) represents missing completely at random (MCAR). For the observed data (blue points), the estimated slope, se and R2, are (a) b = 0.86, se = 0.11, R2 = 0.29, (b) b = 0.432, se = 0.06, R2 = 0.23 and (c) b = 0.957, se = 0.07, R2 = 0.49.*
 
 **Evaluation of imputation**
 

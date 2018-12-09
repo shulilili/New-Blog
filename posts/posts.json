@@ -1,5 +1,20 @@
 [
   {
+    "path": "posts/2018-12-08-why-we-should-almost-always-use-benjaminihochberg-to-control-fdr/",
+    "title": "Just use Benjamini-Hochberg!",
+    "description": "Tukey's test v.s Benjamini-Hochberg. The latter is better.",
+    "author": [
+      {
+        "name": "Sili Fan",
+        "url": "https://github.com/slfan2013"
+      }
+    ],
+    "date": "2018-12-08",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2018-12-08T23:34:48-08:00"
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome to My Blog",
     "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
@@ -25,8 +40,28 @@
       }
     ],
     "date": "2018-11-05",
+    "categories": [
+      "missing value",
+      "Nov"
+    ],
+    "preview": "posts/2018-11-08-missing-value/fig1.jpg",
+    "last_modified": "2018-11-09T12:30:10-08:00"
+  },
+  {
+    "path": "posts/2018-12-06-why-tukeys-test-but-not-t-test-after-anova/",
+    "title": "Why Tukey's test but not t-test after ANOVA?",
+    "description": "Student t-test blows the type I error rate. Tukey's test controls the type I error rate.",
+    "author": [
+      {
+        "name": "Sili Fan",
+        "url": "https://github.com/slfan2013"
+      }
+    ],
+    "date": "2018-10-23",
     "categories": [],
-    "preview": {},
-    "last_modified": "2018-11-08T20:47:07-08:00"
+    "preview": "posts/2018-12-06-why-tukeys-test-but-not-t-test-after-anova/why-tukeys-test-but-not-t-test-after-anova_files/figure-html5/unnamed-chunk-6-1.png",
+    "last_modified": "2018-12-06T13:51:34-08:00",
+    "preview_width": 1248,
+    "preview_height": 768
   }
 ]

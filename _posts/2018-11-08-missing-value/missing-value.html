@@ -44,12 +44,12 @@
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["How to deal with Missing Value"]},{"type":"character","attributes":{},"value":["A new article created using the Radix format."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Shuli Hu"]},{"type":"character","attributes":{},"value":["Sili Fan"]},{"type":"character","attributes":{},"value":["http://fiehnlab.ucdavis.edu/component/contact/contact/11-members/14-wcmc/17"]}]}]},{"type":"character","attributes":{},"value":["11-05-2018"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories"]}},"value":[{"type":"character","attributes":{},"value":["How to deal with Missing Value"]},{"type":"character","attributes":{},"value":["A new article created using the Radix format."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Shuli Hu"]},{"type":"character","attributes":{},"value":["Sili Fan"]},{"type":"character","attributes":{},"value":["http://fiehnlab.ucdavis.edu/component/contact/contact/11-members/14-wcmc/17"]}]}]},{"type":"character","attributes":{},"value":["11-05-2018"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["missing value","Nov"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["missing-value_files/bowser-1.9.3/bowser.min.js","missing-value_files/distill-2.2.21/template.v2.js","missing-value_files/jquery-1.11.3/jquery.min.js","missing-value_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["fig1.jpg","fig1.PNG","fig2.jpg","fig3.jpg","missing-value_files/bowser-1.9.3/bowser.min.js","missing-value_files/distill-2.2.21/template.v2.js","missing-value_files/jquery-1.11.3/jquery.min.js","missing-value_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -964,19 +964,20 @@
 </ul>
 <div class="layout-chunk" data-layout="l-body-outset">
 <div class="figure"><span id="fig:unnamed-chunk-1"></span>
-<img src="fig1.PNG" alt="Figure from https://www.sciencedirect.com/science/article/pii/S0169534708002772#fig1" class=external />
+<img src="fig1.jpg" alt="Figure from https://www.sciencedirect.com/science/article/pii/S0169534708002772#fig1" width="398" class=external />
 <p class="caption">
 Figure 1: Figure from <a href="https://www.sciencedirect.com/science/article/pii/S0169534708002772#fig1" class="uri">https://www.sciencedirect.com/science/article/pii/S0169534708002772#fig1</a>
 </p>
 </div>
 </div>
+<p><em>Figure 1. Illustrations of the classification for the mechanism of missing data. Blue points are observations whereas red points are missing observations in the y-variable; statistics for complete data (blue and red combined) are slope (b) = 1, standard error (se) = 0.05 and R2 = 0.5. Assuming observations in the x-variable are complete, (a) represents missing at random (MAR), (b) represents missing not at random (MNAR) and (c) represents missing completely at random (MCAR). For the observed data (blue points), the estimated slope, se and R2, are (a) b = 0.86, se = 0.11, R2 = 0.29, (b) b = 0.432, se = 0.06, R2 = 0.23 and (c) b = 0.957, se = 0.07, R2 = 0.49.</em></p>
 <p><strong>Evaluation of imputation</strong></p>
 <ul>
 <li><strong>Evaluation of different imputation methods for MCAR/MAR:</strong> The paper generated random missing value on two data set from the proportion of 2.5% to 50% in step of 2.5%. And then use PCA to evaluate performance for the both data set. The result showed that RF (Imputation with Random Forest) performed the best in the all imputation methods.</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span id="fig:unnamed-chunk-2"></span>
-<img src="fig2.jpg" alt="Figure from https://www.nature.com/articles/s41598-017-19120-0/figures/1#search-menu" class=external />
+<img src="fig2.jpg" alt="Figure from https://www.nature.com/articles/s41598-017-19120-0/figures/1#search-menu" width="450" class=external />
 <p class="caption">
 Figure 2: Figure from <a href="https://www.nature.com/articles/s41598-017-19120-0/figures/1#search-menu" class="uri">https://www.nature.com/articles/s41598-017-19120-0/figures/1#search-menu</a>
 </p>
@@ -988,7 +989,7 @@ Figure 2: Figure from <a href="https://www.nature.com/articles/s41598-017-19120-
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span id="fig:unnamed-chunk-3"></span>
-<img src="fig3.jpg" alt="Figure from https://www.nature.com/articles/s41598-017-19120-0/figures/1#search-menu" class=external />
+<img src="fig3.jpg" alt="Figure from https://www.nature.com/articles/s41598-017-19120-0/figures/1#search-menu" width="450" class=external />
 <p class="caption">
 Figure 3: Figure from <a href="https://www.nature.com/articles/s41598-017-19120-0/figures/1#search-menu" class="uri">https://www.nature.com/articles/s41598-017-19120-0/figures/1#search-menu</a>
 </p>

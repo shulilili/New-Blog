@@ -1,25 +1,27 @@
 name: "New-Blog"
-title: "My Blog"
+title: "Metabox-Blog"
 description: |
   My Blog
 output_dir: "."
-base_url: https://beta.rstudioconnect.com/content/3776/
+base_url: https://hushuli.github.io/Metabox-Blog.github.io/
 navbar:
-  logo: images/rstudio.png
+  logo: image/rstudio.png
   right:
     - text: "Home"
       href: index.html
     - text: "About"
       href: about.html
-    - text: "Contributors"
-      href: contributors.html
+    - text: "Contact Us"
+      href: contactus.html
     - icon: fa fa-rss
       href: index.xml
 output: radix::radix_article
+site: radix::radix_website
+listing: posts
 collections:
   posts:
     disqus: 
-      shortname: reproducible-finance-with-r
+      shortname: New-Blog
       hidden: false
     share: [twitter, linkedin,facebook]
     subscribe: _subscribe.html

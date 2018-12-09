@@ -1,0 +1,31 @@
+---
+title: "Just use Benjamini-Hochberg!"
+description: |
+  Tukey's test v.s Benjamini-Hochberg. The latter is better.
+author:
+  - name: Sili Fan
+    url: https://github.com/slfan2013
+    affiliation: West Coast Metabolomics Center
+date: 12-08-2018
+output:
+  radix::radix_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Tukey's test 
+When people have multiple groups and have no prior hypothesis about which specific groups might differ, people usually use Tukey's test as a post hoc test that test all possible group comparisons. 
+
+
+x <- factor(rep(LETTERS[1:6],rep(4,6)))
+
+p_matrix = matrix(NA, 1000, 15)
+for(i in 1:1000){
+  ps = as.numeric(pairwise.t.test(rnorm(24),x,p.adjust.method='none')$p.value)
+  ps = ps[!is.na(ps)]
+  p_matrix[i,] = ps
+}
+

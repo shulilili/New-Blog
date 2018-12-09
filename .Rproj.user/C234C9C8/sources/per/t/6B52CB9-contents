@@ -1,9 +1,0 @@
----
-title: "Contributors of this blog"
-description: |
-  Some infomation about us
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```

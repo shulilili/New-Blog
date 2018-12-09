@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="radix" />
-  <link rel="alternate" type="application/rss+xml" href="https://beta.rstudioconnect.com/content/3776/index.xml" />
+  <link rel="alternate" type="application/rss+xml" href="https://hushuli.github.io/Metabox-Blog.github.io/index.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -20,26 +20,26 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>My Blog</title>
+  <title>Metabox-Blog</title>
   
   
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="My Blog"/>
+  <meta property="og:title" content="Metabox-Blog"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="My Blog"/>
+  <meta property="og:site_name" content="Metabox-Blog"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="My Blog"/>
+  <meta property="twitter:title" content="Metabox-Blog"/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["My Blog"]},{"type":"character","attributes":{},"value":["radix::radix_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Metabox-Blog"]},{"type":"character","attributes":{},"value":["radix::radix_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1262,7 +1262,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"My Blog","authors":[]}
+{"title":"Metabox-Blog","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1271,14 +1271,14 @@
 <nav class="radix-site-nav radix-site-header">
 <div class="nav-left">
 <span class="logo">
-<img src="images/rstudio.png"/>
+<img src="image/rstudio.png"/>
 </span>
-<a href="index.html" class="title">My Blog</a>
+<a href="index.html" class="title">Metabox-Blog</a>
 </div>
 <div class="nav-right">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
-<a href="contributors.html">Contributors</a>
+<a href="contactus.html">Contact Us</a>
 <a href="index.xml">
 <i class="fa fa-rss"></i>
 </a>
@@ -1611,13 +1611,26 @@ function init_posts_list() {
 
 <div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
-<h1 class="posts-list-caption">My Blog</h1>
+<h1 class="posts-list-caption">Metabox-Blog</h1>
+<a href="posts/2018-12-08-why-we-should-almost-always-use-benjaminihochberg-to-control-fdr/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Dec. 8, 2018</div>
+</div>
+<div class="thumbnail"></div>
+<div class="description">
+<h2>Just use Benjamini-Hochberg!</h2>
+<p>Tukey's test v.s Benjamini-Hochberg. The latter is better.</p>
+</div>
+</a>
 <a href="posts/welcome/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":[]}</script>
 <div class="metadata">
 <div class="publishedDate">Nov. 8, 2018</div>
 </div>
-<div class="thumbnail"></div>
+<div class="thumbnail">
+<img/>
+</div>
 <div class="description">
 <h2>Welcome to My Blog</h2>
 <p>Welcome to our new blog, My Blog. We hope you enjoy 
@@ -1625,16 +1638,29 @@ reading what we have to say!</p>
 </div>
 </a>
 <a href="posts/2018-11-08-missing-value/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["missing value","Nov"]}</script>
 <div class="metadata">
 <div class="publishedDate">Nov. 5, 2018</div>
 </div>
 <div class="thumbnail">
-<img/>
+<img data-src="posts/2018-11-08-missing-value/fig1.jpg"/>
 </div>
 <div class="description">
 <h2>How to deal with Missing Value</h2>
 <p>A new article created using the Radix format.</p>
+</div>
+</a>
+<a href="posts/2018-12-06-why-tukeys-test-but-not-t-test-after-anova/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Oct. 23, 2018</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2018-12-06-why-tukeys-test-but-not-t-test-after-anova/why-tukeys-test-but-not-t-test-after-anova_files/figure-html5/unnamed-chunk-6-1.png"/>
+</div>
+<div class="description">
+<h2>Why Tukey's test but not t-test after ANOVA?</h2>
+<p>Student t-test blows the type I error rate. Tukey's test controls the type I error rate.</p>
 </div>
 </a>
 </div>
@@ -1644,33 +1670,45 @@ reading what we have to say!</p>
 <html>
 
 <head>
-<title>Title</title>
+<title>Metabox-Blog</title>
 </head>
 
 <body>
 
 <form method='post' action='https://blogtrottr.com'>
-  <p>Enjoy this blog? Get notified of new posts via email:</p>
-  <input type='text' name='btr_email' />
-  <input type='hidden' name='btr_url'
-         value='https://beta.rstudioconnect.com/content/3776/index.xml'/>
-  <input type='hidden' name='schedule_type' value='0' />
-  <input type='submit' value='Subscribe' />
+    Your email: <input type='text' name='btr_email' /><br />
+    <input type='hidden' name='btr_url' value='https://hushuli.github.io/Metabox-Blog.github.io/index.xml'/>
+    <input type='hidden' name='schedule_type' value='0' />
+    <input type='submit' value='Follow this feed via email' />
 </form>
 
 </body>
 </html>
+
 
+</div>
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#missing_value">missing value</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#Nov">Nov</a>
+<span class="category-count">(1)</span>
+</li>
+</ul>
 </div>
 </div>
 <div class="posts-more">
 <a href="#">More articles &raquo;</a>
 </div>
 </div>
-<!--/radix_placeholder_article_listing-->
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>My Blog</h1>
+<h1>Metabox-Blog</h1>
 
 </div>
 

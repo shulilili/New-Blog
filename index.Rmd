@@ -1,5 +1,5 @@
 ---
-title: "My Blog"
+title: "Metabox-Blog"
 site: radix::radix_website
 listing: posts
 ---

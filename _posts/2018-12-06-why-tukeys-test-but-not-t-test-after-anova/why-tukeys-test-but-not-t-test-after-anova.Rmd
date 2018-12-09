@@ -1,0 +1,127 @@
+---
+title: "Why Tukey's test but not t-test after ANOVA?"
+description: |
+  Student t-test blows the type I error rate. Tukey's test controls the type I error rate.
+author:
+  - name: Sili Fan
+    url: https://github.com/slfan2013
+date: 10-23-2018
+output:
+  radix::radix_article:
+    self_contained: false
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+One-way ANOVA determines whether there are any statistically significant difference between the means of two or more independent groups. It is important to realize that the one-way ANOVA is an *omnibus* test statistic and cannot tell you which specific groups were significantly different from each other; it only tells you there are at least two groups were different. For example, you may want to know if the average height differed among Chinese, Indian, Japanese, and Korean. If the one-way ANOVA returns a *p*-value < 0.05, people usually conclude that the average heights of people in these four contries is different.
+
+After detecting some differences among the groups, interest centers on which specific groups are different. If you have no prior hypotheses about which specific groups might differ, you can compare each pair of two-groups. Can we use Student t-test, as it is typically used when comparing two independent groups? The answer is *Nope*. Let's do a simulation study.
+
+### Using t-test
+
+Suppose you have a factor of 6 groups, *A*, *B*, ..., *F* with 4 observations per group: 
+
+
+```{r,echo=TRUE}
+groups <- factor(rep(LETTERS[1:6], rep(4,6)))
+print(groups)
+```
+and suppose the response has no relationship to the groups (i.e. the null hypothesis holds)
+
+```{r,echo=FALSE}
+set.seed(1)
+```
+```{r,echo=TRUE}
+response = rnorm(length(groups)) # randomly generate 24, e.g. length(groups), values as response.
+```
+Since the data is randomly generated, we expect there is no significant result if we perform pairwise comparison using Student t test. 
+
+```{r, echo=TRUE}
+pairwise_t_tests = pairwise.t.test(response, groups, p.adjust.method = 'none')
+print(pairwise_t_tests)
+```
+
+Good! There is no *p*-value less than 0.05 in the previous comparison table.
+
+Now let’s repeat the experiment 1000 times and see how many of them will incorrectly find us at least two significant groups. Because our significant criterion is 5%, we expect to have a Type I error of 5% and 5% of the 1000 simutations return significance. Unfortunately, this is not true. See below,
+
+```{r, echo=TRUE}
+significant_find = c() # TRUE, if a p value is < 0.05, otherwise FALSE
+for(i in 1:1000){
+  response = rnorm(length(groups))
+  pairwise_t_tests = pairwise.t.test(response, groups, p.adjust.method = 'none')
+  significant_find[i] = any(pairwise_t_tests$p.value<0.05, na.rm = TRUE)
+}
+sum(significant_find==TRUE)/1000
+```
+
+The real overall Type I error rate is `r paste0(sum(significant_find==TRUE)/1000*100,"%")` Actually, if the number of groups increase, the situation gets even worse.
+
+```{r echo=FALSE, out.width = '150%'}
+type_I_error = c()
+type_I_error_tukey = c()
+max_num_group = 6
+for(num_group in 2:max_num_group){
+  groups <- factor(rep(LETTERS[1:num_group], rep(4,num_group)))
+  significant_find = c() # TRUE, if a p value is < 0.05, otherwise FALSE
+  significant_find_tukey = c() # TRUE, if a p value is < 0.05, otherwise FALSE
+  for(i in 1:1000){
+    response = rnorm(length(groups))
+    pairwise_t_tests = pairwise.t.test(response, groups, p.adjust.method = 'none')
+    significant_find[i] = any(pairwise_t_tests$p.value<0.05, na.rm = TRUE)
+    
+    lm <- lm(response ~ groups)
+    aov <- aov(lm)
+    tukey.test <- TukeyHSD(aov)
+    significant_find_tukey[i] = any(tukey.test$groups[,"p adj"]<0.05, na.rm = TRUE)
+    
+  }
+  type_I_error[num_group] = sum(significant_find==TRUE)/1000
+  type_I_error_tukey[num_group] = sum(significant_find_tukey==TRUE)/1000
+}
+pacman::p_load(data.table, ggplot2)
+bar_dta = data.table(type = rep(c("Student t-test", "Tukey's test"), each = length(type_I_error)-1), error = c(type_I_error[-1], type_I_error_tukey[-1])*100, num_group = factor(as.character(2:max_num_group),levels = 2:max_num_group))
+ggplot(data=bar_dta, aes(x=num_group, y=error, fill=type)) +
+  geom_bar(stat="identity", position=position_dodge())+
+  geom_text(aes(label=error), vjust=1.6, color="white",
+            position = position_dodge(0.9), size=3.5)+
+   scale_fill_manual(values=c('#999999','#E69F00'))+
+  theme_minimal() + scale_x_discrete(breaks=as.character(2:max_num_group),
+        labels=2:max_num_group) + labs(x = "Number of Groups", y = "Type I Error Rate", title = "Simulated Type I Error Rate", subtitle = "type I error rate increase with number of groups using Student t test.")
+```
+
+
+```{r,echo=FALSE}
+pacman::p_load(knitr, dplyr, kableExtra)
+percent <- function(x, digits = 2, format = "f", ...) {
+  paste0(formatC(100 * x, format = format, digits = digits, ...), "%")
+}
+dt = data.frame(two = percent(c(0.05,0.05)), three = percent(c(0.05, 0.122)), four = percent(c(0.05, 0.203)), five = percent(c(0.05, 0.286)), six = percent(c(0.05, 0.366)))
+rownames(dt) = c("Nominal Type I error", "Actual overall Type I error")
+kable(dt) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+In fact, to control the type I error at 5%, we need to increase our  t-critical value of `qt(0.975, 24-6)`, 2.1009. It tuens out that this value can be calculated using the "Studentized Range distribution", using `qtukey(0.95,6,24-6)/sqrt(2)`. This is where the Tukey's test comes from!
+
+### Using Tukey's test
+```{r,echo=TRUE}
+significant_find = c() # TRUE, if a p value is < 0.05, otherwise FALSE
+for(i in 1:1000){
+  response = rnorm(length(groups))
+  lm <- lm(response ~ groups)
+  aov <- aov(lm)
+  tukey.test <- TukeyHSD(aov)
+  significant_find[i] = any(tukey.test$groups[,"p adj"]<0.05, na.rm = TRUE)
+}
+sum(significant_find==TRUE)/1000
+```
+As a result, Tukey's test returned a Type I error rate of `r paste0(sum(significant_find==TRUE)/1000*100,"%")`, which is close to the expected 5%.
+
+### Conclusion
+Using Student t-tests as the post hoc test after ANOVA increase the type I error rate dramatically. The more groups of comparisons we have, the higher the type I error rate it will suffer. As a conclusion, Tukey's test is recommanded, as it controls the type I error rate at 5% regardless of number of groups.
+
+***
+#### Seemingy confilicting result with one-way ANOVA
+It is not uncommon to find what appears to be a conflict between the results of the one-way ANOVA and a post hoc test such as Tukey's post hoc test where one finds a statistically significant result for one, but not the other. For example, a statistically significant one-way ANOVA, but no pairwise comparison using the Tukey method that is statistically significant. There can be different reasons for this, such as the conservative or liberal nature of a particular test, but fundamentally it is due to the differences in the distributions used in the one-way ANOVA and Tukey post hoc test (Hsu, 1996). Alternately, you can have a statistically significant Tukey post hoc test, but a non-significant one-way ANOVA. Whether the conclusions from both these tests are in agreement depends on the distribution of the means (Kirk, 2013).
+
